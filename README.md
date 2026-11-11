@@ -1,6 +1,6 @@
 # artepublica-AI
 
-Image recognition built on a pretrained network: an ImageNet-pretrained ResNet-50 whose
+Image recognition built on a pretrained network: an ImageNet-pretrained ResNet-50 or MobileNetV2 whose
 backbone is frozen, with a new classification head trained on this project's images.
 
 ## Setup
@@ -38,16 +38,19 @@ The Drive folder is flat, so newly downloaded photos have to be moved into the r
 ## Train
 
 ```bash
-python src/train.py --data data/raw --epochs 10
+python src/train.py --arch resnet50 --data data/raw --epochs 8
 ```
 
-Holds out 20% of each class for validation and saves the best checkpoint, with the class
-names, to `models/classifier.pt` (not committed).
+`--arch` picks the pretrained network: `resnet50` (default; larger, stronger features) or
+`mobilenet_v2` (about 7 times smaller, suited to phones). Training holds out 20% of each class
+for validation and saves the best checkpoint, with the class names, to `models/<arch>.pt`
+(not committed). The split depends only on `--seed`, so both networks are scored on the same
+validation images.
 
 ## Recognize new images
 
 ```bash
-python src/predict.py path/to/image.jpg
+python src/predict.py --checkpoint models/resnet50.pt path/to/image.jpg
 ```
 
 Prints the top 3 classes with their confidence.
