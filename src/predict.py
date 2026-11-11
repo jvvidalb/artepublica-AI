@@ -6,9 +6,8 @@ Usage: python src/predict.py path/to/image.jpg [more images...]
 import argparse
 
 import torch
-from PIL import Image
 
-from dataset import eval_transform
+from dataset import eval_transform, load_image
 from model import build_model
 
 
@@ -27,7 +26,7 @@ def main():
 
     top_k = min(args.top_k, len(classes))
     for path in args.images:
-        image = eval_transform(Image.open(path).convert("RGB")).unsqueeze(0)
+        image = eval_transform(load_image(path)).unsqueeze(0)
         with torch.no_grad():
             probabilities = model(image).softmax(dim=1)[0]
         scores, indices = probabilities.topk(top_k)

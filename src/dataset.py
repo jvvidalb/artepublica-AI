@@ -3,6 +3,7 @@
 import random
 from collections import defaultdict
 
+from PIL import Image, ImageOps
 from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, transforms
 
@@ -24,6 +25,12 @@ eval_transform = transforms.Compose([
 ])
 
 
+def load_image(path):
+    """Open an image as RGB, applying the EXIF rotation that phone cameras record."""
+    with Image.open(path) as image:
+        return ImageOps.exif_transpose(image).convert("RGB")
+
+
 def stratified_split(targets, val_fraction, seed):
     """Split indices so every class keeps roughly val_fraction of its images for validation."""
     by_class = defaultdict(list)
@@ -43,8 +50,8 @@ def stratified_split(targets, val_fraction, seed):
 
 def make_loaders(data_dir, batch_size=32, val_fraction=0.2, seed=0, workers=2):
     """Return (train_loader, val_loader, class_names)."""
-    train_set = datasets.ImageFolder(data_dir, transform=train_transform)
-    val_set = datasets.ImageFolder(data_dir, transform=eval_transform)
+    train_set = datasets.ImageFolder(data_dir, transform=train_transform, loader=load_image)
+    val_set = datasets.ImageFolder(data_dir, transform=eval_transform, loader=load_image)
     train_indices, val_indices = stratified_split(train_set.targets, val_fraction, seed)
 
     train_loader = DataLoader(Subset(train_set, train_indices), batch_size=batch_size,

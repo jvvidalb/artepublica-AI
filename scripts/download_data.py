@@ -34,9 +34,27 @@ def main():
     parser.add_argument("--out", default="data/raw", help="destination folder")
     args = parser.parse_args()
 
-    downloaded = gdown.download_folder(url=args.url, output=args.out, resume=True)
-    if not downloaded:
-        raise SystemExit("Nothing was downloaded. Check that the folder is shared by public link.")
+    # List the folder first, then fetch file by file with a timeout: a single
+    # download_folder call can hang indefinitely on one file.
+    listing = gdown.download_folder(url=args.url, output=args.out, skip_download=True, quiet=True)
+    if not listing:
+        raise SystemExit("Nothing was listed. Check that the folder is shared by public link.")
+
+    failed = []
+    for number, item in enumerate(listing, start=1):
+        destination = Path(item.local_path)
+        if destination.exists():
+            continue
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        print(f"[{number}/{len(listing)}] {destination.name}", flush=True)
+        try:
+            if not gdown.download(id=item.id, output=str(destination), quiet=True, timeout=30):
+                failed.append(destination)
+        except Exception as error:
+            print(f"  failed: {error}")
+            failed.append(destination)
+    if failed:
+        print(f"{len(failed)} files failed to download; run again to retry them.")
 
     count, total_bytes, unreadable = check_images(args.out)
     print(f"{count} readable images, {total_bytes / 1e6:.1f} MB in {args.out}")
