@@ -1,6 +1,6 @@
 """Classify new images with a trained checkpoint.
 
-Usage: python src/predict.py path/to/image.jpg [more images...]
+Usage: python src/predict.py --checkpoint models/resnet50.pt path/to/image.jpg [more images...]
 """
 
 import argparse
@@ -14,13 +14,13 @@ from model import build_model
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("images", nargs="+", help="image files to classify")
-    parser.add_argument("--checkpoint", default="models/classifier.pt")
+    parser.add_argument("--checkpoint", default="models/resnet50.pt")
     parser.add_argument("--top-k", type=int, default=3)
     args = parser.parse_args()
 
     checkpoint = torch.load(args.checkpoint, map_location="cpu")
     classes = checkpoint["classes"]
-    model = build_model(len(classes), pretrained=False)
+    model, _ = build_model(checkpoint["arch"], len(classes), pretrained=False)
     model.load_state_dict(checkpoint["state_dict"])
     model.eval()
 

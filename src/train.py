@@ -1,6 +1,6 @@
-"""Train a new classification head on top of a pretrained ResNet-50.
+"""Train a new classification head on top of a pretrained network.
 
-Usage: python src/train.py --data data/raw --epochs 10
+Usage: python src/train.py --arch resnet50 --data data/raw --epochs 10
 """
 
 import argparse
@@ -10,7 +10,7 @@ import torch
 from torch import nn
 
 from dataset import make_loaders
-from model import build_model
+from model import ARCHITECTURES, build_model
 
 
 def evaluate(model, loader, device):
@@ -27,7 +27,8 @@ def evaluate(model, loader, device):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", default="data/raw", help="folder with one subfolder per class")
-    parser.add_argument("--out", default="models/classifier.pt", help="checkpoint path")
+    parser.add_argument("--arch", default="resnet50", choices=ARCHITECTURES, help="pretrained network")
+    parser.add_argument("--out", help="checkpoint path (default: models/<arch>.pt)")
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=1e-3)
@@ -40,21 +41,21 @@ def main():
 
     train_loader, val_loader, classes = make_loaders(
         args.data, args.batch_size, args.val_fraction, args.seed)
-    print(f"{len(classes)} classes, {len(train_loader.dataset)} training images, "
+    print(f"{args.arch}: {len(classes)} classes, {len(train_loader.dataset)} training images, "
           f"{len(val_loader.dataset)} validation images, device={device}")
 
-    model = build_model(len(classes)).to(device)
-    optimizer = torch.optim.Adam(model.fc.parameters(), lr=args.lr)
+    model, head = build_model(args.arch, len(classes))
+    model.to(device)
+    optimizer = torch.optim.Adam(head.parameters(), lr=args.lr)
     loss_fn = nn.CrossEntropyLoss()
 
-    out_path = Path(args.out)
+    out_path = Path(args.out or f"models/{args.arch}.pt")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     best_accuracy = -1.0
 
     for epoch in range(1, args.epochs + 1):
-        # The frozen backbone stays in eval mode so its batch-norm statistics are not disturbed.
+        # The frozen backbone stays in eval mode, so batch-norm statistics and dropout are fixed.
         model.eval()
-        model.fc.train()
         running_loss = seen = 0
         for images, labels in train_loader:
             images, labels = images.to(device), labels.to(device)
@@ -70,7 +71,7 @@ def main():
 
         if accuracy > best_accuracy:
             best_accuracy = accuracy
-            torch.save({"state_dict": model.state_dict(), "classes": classes}, out_path)
+            torch.save({"arch": args.arch, "state_dict": model.state_dict(), "classes": classes}, out_path)
 
     print(f"best validation accuracy {best_accuracy:.3f}, checkpoint saved to {out_path}")
 
