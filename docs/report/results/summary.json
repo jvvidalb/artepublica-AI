@@ -1,0 +1,46 @@
+[
+ {
+  "arch": "resnet50",
+  "final_accuracy_mean": 1.0,
+  "final_accuracy_min": 1.0,
+  "final_accuracy_max": 1.0,
+  "best_epoch_accuracy_mean": 1.0,
+  "total_parameters": 23516228,
+  "checkpoint_mb": 94.4,
+  "train_seconds_mean": 23.1,
+  "inference_ms_per_image": 6.05
+ },
+ {
+  "arch": "mobilenet_v2",
+  "final_accuracy_mean": 0.9902,
+  "final_accuracy_min": 0.9706,
+  "final_accuracy_max": 1.0,
+  "best_epoch_accuracy_mean": 0.9902,
+  "total_parameters": 2228996,
+  "checkpoint_mb": 9.2,
+  "train_seconds_mean": 18.3,
+  "inference_ms_per_image": 5.15
+ },
+ {
+  "arch": "efficientnet_b0",
+  "final_accuracy_mean": 1.0,
+  "final_accuracy_min": 1.0,
+  "final_accuracy_max": 1.0,
+  "best_epoch_accuracy_mean": 1.0,
+  "total_parameters": 4012672,
+  "checkpoint_mb": 16.4,
+  "train_seconds_mean": 18.9,
+  "inference_ms_per_image": 8.32
+ },
+ {
+  "arch": "mobilenetv4",
+  "final_accuracy_mean": 0.9902,
+  "final_accuracy_min": 0.9706,
+  "final_accuracy_max": 1.0,
+  "best_epoch_accuracy_mean": 0.9902,
+  "total_parameters": 8439636,
+  "checkpoint_mb": 34.2,
+  "train_seconds_mean": 18.3,
+  "inference_ms_per_image": 9.6
+ }
+]

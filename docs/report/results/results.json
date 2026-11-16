@@ -1,0 +1,4790 @@
+{
+ "config": {
+  "archs": [
+   "resnet50",
+   "mobilenet_v2",
+   "efficientnet_b0",
+   "mobilenetv4"
+  ],
+  "epochs": 20,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "val_fraction": 0.2,
+  "input_size": 224,
+  "frozen_backbone": true,
+  "mobilenetv4_variant": "mobilenetv4_conv_medium.e500_r256_in1k"
+ },
+ "environment": {
+  "device": "cuda",
+  "device_name": "Tesla T4",
+  "in_colab": true,
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "torchvision": "0.29.1+cu130",
+  "timm": "1.0.31"
+ },
+ "dataset": {
+  "classes": [
+   "escultura_para_o_rio",
+   "o_passante",
+   "retangulo_vazado",
+   "sem_titulo_amilcar_de_castro"
+  ],
+  "images_per_class": {
+   "escultura_para_o_rio": 64,
+   "o_passante": 37,
+   "retangulo_vazado": 38,
+   "sem_titulo_amilcar_de_castro": 31
+  },
+  "total_images": 170
+ },
+ "models": {
+  "resnet50": {
+   "total_parameters": 23516228,
+   "trained_parameters": 8196,
+   "feature_size": 2048,
+   "checkpoint_mb": 94.4
+  },
+  "mobilenet_v2": {
+   "total_parameters": 2228996,
+   "trained_parameters": 5124,
+   "feature_size": 1280,
+   "checkpoint_mb": 9.2
+  },
+  "efficientnet_b0": {
+   "total_parameters": 4012672,
+   "trained_parameters": 5124,
+   "feature_size": 1280,
+   "checkpoint_mb": 16.4
+  },
+  "mobilenetv4": {
+   "total_parameters": 8439636,
+   "trained_parameters": 5124,
+   "feature_size": 1280,
+   "checkpoint_mb": 34.2
+  }
+ },
+ "runs": [
+  {
+   "arch": "resnet50",
+   "seed": 0,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 10,
+   "train_seconds": 23.7,
+   "inference_ms_per_image": 6.43,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.327,
+     "val_loss": 1.1216,
+     "val_accuracy": 0.5588,
+     "seconds": 3.6
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.9986,
+     "val_loss": 0.9136,
+     "val_accuracy": 0.6471,
+     "seconds": 4.6
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.7913,
+     "val_loss": 0.7447,
+     "val_accuracy": 0.7647,
+     "seconds": 5.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.6161,
+     "val_loss": 0.6065,
+     "val_accuracy": 0.8529,
+     "seconds": 6.6
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.4726,
+     "val_loss": 0.5119,
+     "val_accuracy": 0.8824,
+     "seconds": 7.6
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.3872,
+     "val_loss": 0.438,
+     "val_accuracy": 0.8824,
+     "seconds": 8.6
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3119,
+     "val_loss": 0.3794,
+     "val_accuracy": 0.9412,
+     "seconds": 9.5
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.2653,
+     "val_loss": 0.3322,
+     "val_accuracy": 0.9706,
+     "seconds": 10.5
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.2169,
+     "val_loss": 0.2954,
+     "val_accuracy": 0.9706,
+     "seconds": 11.6
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.1914,
+     "val_loss": 0.2653,
+     "val_accuracy": 1.0,
+     "seconds": 13.0
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.1777,
+     "val_loss": 0.2406,
+     "val_accuracy": 1.0,
+     "seconds": 14.3
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.1616,
+     "val_loss": 0.2194,
+     "val_accuracy": 1.0,
+     "seconds": 15.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.1387,
+     "val_loss": 0.2019,
+     "val_accuracy": 1.0,
+     "seconds": 16.3
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1286,
+     "val_loss": 0.1887,
+     "val_accuracy": 1.0,
+     "seconds": 17.3
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.1191,
+     "val_loss": 0.1761,
+     "val_accuracy": 1.0,
+     "seconds": 18.3
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.1047,
+     "val_loss": 0.1648,
+     "val_accuracy": 1.0,
+     "seconds": 19.3
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0964,
+     "val_loss": 0.1544,
+     "val_accuracy": 1.0,
+     "seconds": 20.4
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0903,
+     "val_loss": 0.1444,
+     "val_accuracy": 1.0,
+     "seconds": 21.7
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0831,
+     "val_loss": 0.1365,
+     "val_accuracy": 1.0,
+     "seconds": 22.7
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0814,
+     "val_loss": 0.1291,
+     "val_accuracy": 1.0,
+     "seconds": 23.7
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9387
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53.jpeg",
+     "index": 28,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9961
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.06.jpeg",
+     "index": 24,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9748
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.7821
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9095
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9174
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03.jpeg",
+     "index": 23,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9807
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.02.jpeg",
+     "index": 40,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9864
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52.jpeg",
+     "index": 11,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9926
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53 (2).jpeg",
+     "index": 27,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9851
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.47 (3).jpeg",
+     "index": 61,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9043
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9292
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.4706
+    },
+    {
+     "file": "o_passante/IMG_20190423_132347677.jpg",
+     "index": 94,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8664
+    },
+    {
+     "file": "o_passante/IMG_20190423_132058142.jpg",
+     "index": 75,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7305
+    },
+    {
+     "file": "o_passante/IMG_20190423_132002120.jpg",
+     "index": 69,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8976
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.6941
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9274
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8827
+    },
+    {
+     "file": "o_passante/IMG_20190423_132156513.jpg",
+     "index": 80,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8193
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.911
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135245317.jpg",
+     "index": 125,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9668
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135302808.jpg",
+     "index": 128,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9539
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135012399.jpg",
+     "index": 107,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9388
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 11.59.09.jpeg",
+     "index": 137,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9572
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135026955.jpg",
+     "index": 108,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9941
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135118510.jpg",
+     "index": 113,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9913
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9371
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144831430.jpg",
+     "index": 155,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8126
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145019960.jpg",
+     "index": 166,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9594
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144642877.jpg",
+     "index": 147,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.6074
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144959858.jpg",
+     "index": 163,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9718
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144722849.jpg",
+     "index": 149,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8531
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/Sem_titulo_Amilcar_de_Castro.jpg",
+     "index": 169,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.7693
+    }
+   ]
+  },
+  {
+   "arch": "resnet50",
+   "seed": 1,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 13,
+   "train_seconds": 22.8,
+   "inference_ms_per_image": 5.83,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.2785,
+     "val_loss": 1.078,
+     "val_accuracy": 0.5882,
+     "seconds": 1.5
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.9572,
+     "val_loss": 0.8505,
+     "val_accuracy": 0.7941,
+     "seconds": 2.9
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.7399,
+     "val_loss": 0.671,
+     "val_accuracy": 0.9118,
+     "seconds": 4.0
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.5589,
+     "val_loss": 0.544,
+     "val_accuracy": 0.9706,
+     "seconds": 5.0
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.4591,
+     "val_loss": 0.4522,
+     "val_accuracy": 0.9706,
+     "seconds": 6.1
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.3699,
+     "val_loss": 0.3846,
+     "val_accuracy": 0.9706,
+     "seconds": 7.1
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3056,
+     "val_loss": 0.3308,
+     "val_accuracy": 0.9706,
+     "seconds": 8.2
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.2654,
+     "val_loss": 0.2906,
+     "val_accuracy": 0.9706,
+     "seconds": 9.2
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.2184,
+     "val_loss": 0.2597,
+     "val_accuracy": 0.9706,
+     "seconds": 10.3
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.1877,
+     "val_loss": 0.2336,
+     "val_accuracy": 0.9706,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.164,
+     "val_loss": 0.2131,
+     "val_accuracy": 0.9706,
+     "seconds": 12.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.1595,
+     "val_loss": 0.1971,
+     "val_accuracy": 0.9706,
+     "seconds": 13.7
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.1344,
+     "val_loss": 0.1843,
+     "val_accuracy": 1.0,
+     "seconds": 15.3
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1215,
+     "val_loss": 0.172,
+     "val_accuracy": 1.0,
+     "seconds": 16.4
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.1077,
+     "val_loss": 0.1613,
+     "val_accuracy": 1.0,
+     "seconds": 17.5
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.101,
+     "val_loss": 0.1525,
+     "val_accuracy": 1.0,
+     "seconds": 18.6
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0929,
+     "val_loss": 0.1434,
+     "val_accuracy": 1.0,
+     "seconds": 19.6
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0881,
+     "val_loss": 0.1366,
+     "val_accuracy": 1.0,
+     "seconds": 20.7
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0768,
+     "val_loss": 0.1304,
+     "val_accuracy": 1.0,
+     "seconds": 21.7
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0817,
+     "val_loss": 0.1253,
+     "val_accuracy": 1.0,
+     "seconds": 22.8
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9341
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.54 (1).jpeg",
+     "index": 12,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9786
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.12 (1).jpeg",
+     "index": 52,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.965
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9084
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.01.jpeg",
+     "index": 19,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9474
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.4289
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9032
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46 (2).jpeg",
+     "index": 58,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9301
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 16.59.59.png",
+     "index": 2,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8545
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.809
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52 (1).jpeg",
+     "index": 10,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9815
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.50.jpeg",
+     "index": 8,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9864
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9367
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.932
+    },
+    {
+     "file": "o_passante/IMG_20190423_133340076.jpg",
+     "index": 99,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8698
+    },
+    {
+     "file": "o_passante/IMG_20190423_132320144.jpg",
+     "index": 90,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7667
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8569
+    },
+    {
+     "file": "o_passante/IMG_20190423_131955095.jpg",
+     "index": 68,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8864
+    },
+    {
+     "file": "o_passante/IMG_20190423_132237860.jpg",
+     "index": 84,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9889
+    },
+    {
+     "file": "o_passante/O_passante.jpg",
+     "index": 100,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9681
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135228257.jpg",
+     "index": 123,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9254
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8832
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135125547.jpg",
+     "index": 114,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9812
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9698
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8867
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.7652
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.965
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135328540.jpg",
+     "index": 132,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9614
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144716447.jpg",
+     "index": 148,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.5709
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144735072.jpg",
+     "index": 150,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8231
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9539
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144829215.jpg",
+     "index": 154,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9445
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144739419.jpg",
+     "index": 151,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8975
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144922091.jpg",
+     "index": 161,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9783
+    }
+   ]
+  },
+  {
+   "arch": "resnet50",
+   "seed": 2,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 10,
+   "train_seconds": 22.9,
+   "inference_ms_per_image": 5.88,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.3795,
+     "val_loss": 1.1263,
+     "val_accuracy": 0.6765,
+     "seconds": 1.0
+    },
+    {
+     "epoch": 2,
+     "train_loss": 1.036,
+     "val_loss": 0.895,
+     "val_accuracy": 0.6765,
+     "seconds": 2.1
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.8077,
+     "val_loss": 0.7173,
+     "val_accuracy": 0.7941,
+     "seconds": 3.5
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.6291,
+     "val_loss": 0.5804,
+     "val_accuracy": 0.9118,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.4963,
+     "val_loss": 0.4765,
+     "val_accuracy": 0.9412,
+     "seconds": 6.2
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.3997,
+     "val_loss": 0.3976,
+     "val_accuracy": 0.9706,
+     "seconds": 7.2
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3263,
+     "val_loss": 0.3396,
+     "val_accuracy": 0.9706,
+     "seconds": 8.3
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.2753,
+     "val_loss": 0.2969,
+     "val_accuracy": 0.9706,
+     "seconds": 9.4
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.2342,
+     "val_loss": 0.2606,
+     "val_accuracy": 0.9706,
+     "seconds": 10.5
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.208,
+     "val_loss": 0.2277,
+     "val_accuracy": 1.0,
+     "seconds": 11.5
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.1794,
+     "val_loss": 0.2029,
+     "val_accuracy": 1.0,
+     "seconds": 12.6
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.1595,
+     "val_loss": 0.1847,
+     "val_accuracy": 1.0,
+     "seconds": 13.7
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.1517,
+     "val_loss": 0.1679,
+     "val_accuracy": 1.0,
+     "seconds": 14.7
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1311,
+     "val_loss": 0.1529,
+     "val_accuracy": 1.0,
+     "seconds": 15.9
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.119,
+     "val_loss": 0.1401,
+     "val_accuracy": 1.0,
+     "seconds": 17.4
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.1102,
+     "val_loss": 0.1287,
+     "val_accuracy": 1.0,
+     "seconds": 18.7
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0997,
+     "val_loss": 0.1198,
+     "val_accuracy": 1.0,
+     "seconds": 19.7
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0971,
+     "val_loss": 0.1114,
+     "val_accuracy": 1.0,
+     "seconds": 20.8
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0848,
+     "val_loss": 0.1043,
+     "val_accuracy": 1.0,
+     "seconds": 21.8
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0802,
+     "val_loss": 0.0983,
+     "val_accuracy": 1.0,
+     "seconds": 22.9
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8546
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.02.jpeg",
+     "index": 21,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9835
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.01.jpeg",
+     "index": 39,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9318
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.09.jpeg",
+     "index": 49,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9787
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55.jpeg",
+     "index": 15,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9709
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.45 (2).jpeg",
+     "index": 55,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9627
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.51.jpeg",
+     "index": 9,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9685
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.00.jpeg",
+     "index": 18,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.962
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.55 (1).jpeg",
+     "index": 30,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9904
+    },
+    {
+     "file": "escultura_para_o_rio/Escultura para o Rio.PNG",
+     "index": 6,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8598
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9229
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8907
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55 (1).jpeg",
+     "index": 14,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9724
+    },
+    {
+     "file": "o_passante/IMG_20190423_132006577.jpg",
+     "index": 70,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9049
+    },
+    {
+     "file": "o_passante/IMG_20190423_131911679.jpg",
+     "index": 64,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9018
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9062
+    },
+    {
+     "file": "o_passante/IMG_20190423_131943012.jpg",
+     "index": 67,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8809
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7393
+    },
+    {
+     "file": "o_passante/IMG_20190423_132213520.jpg",
+     "index": 83,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8486
+    },
+    {
+     "file": "o_passante/IMG_20190423_132114823_BURST000_COVER_TOP.jpg",
+     "index": 76,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8009
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135208337.jpg",
+     "index": 120,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9885
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8042
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9676
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135322730.jpg",
+     "index": 131,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9502
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135049268.jpg",
+     "index": 110,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8902
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9564
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135252772.jpg",
+     "index": 126,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9686
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135153047.jpg",
+     "index": 118,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9269
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145015767.jpg",
+     "index": 165,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9824
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9625
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145014738.jpg",
+     "index": 164,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9794
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144626118.jpg",
+     "index": 145,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.7981
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144550078.jpg",
+     "index": 141,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.6034
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144823234.jpg",
+     "index": 152,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9549
+    }
+   ]
+  },
+  {
+   "arch": "mobilenet_v2",
+   "seed": 0,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 20,
+   "train_seconds": 17.9,
+   "inference_ms_per_image": 5.15,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.2602,
+     "val_loss": 1.0595,
+     "val_accuracy": 0.7647,
+     "seconds": 0.9
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.9632,
+     "val_loss": 0.8546,
+     "val_accuracy": 0.7941,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.7663,
+     "val_loss": 0.6928,
+     "val_accuracy": 0.9118,
+     "seconds": 2.5
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.588,
+     "val_loss": 0.5658,
+     "val_accuracy": 0.9412,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.4658,
+     "val_loss": 0.4756,
+     "val_accuracy": 0.9412,
+     "seconds": 4.2
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.3805,
+     "val_loss": 0.4042,
+     "val_accuracy": 0.9412,
+     "seconds": 5.0
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3159,
+     "val_loss": 0.3493,
+     "val_accuracy": 0.9412,
+     "seconds": 6.3
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.2638,
+     "val_loss": 0.3066,
+     "val_accuracy": 0.9412,
+     "seconds": 7.7
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.2237,
+     "val_loss": 0.2735,
+     "val_accuracy": 0.9412,
+     "seconds": 8.8
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.1938,
+     "val_loss": 0.2468,
+     "val_accuracy": 0.9412,
+     "seconds": 9.6
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.1725,
+     "val_loss": 0.2243,
+     "val_accuracy": 0.9706,
+     "seconds": 10.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.1493,
+     "val_loss": 0.2064,
+     "val_accuracy": 0.9706,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.1367,
+     "val_loss": 0.191,
+     "val_accuracy": 0.9706,
+     "seconds": 12.1
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1261,
+     "val_loss": 0.1797,
+     "val_accuracy": 0.9706,
+     "seconds": 13.0
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.1183,
+     "val_loss": 0.1686,
+     "val_accuracy": 0.9706,
+     "seconds": 13.8
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.106,
+     "val_loss": 0.1588,
+     "val_accuracy": 0.9706,
+     "seconds": 14.6
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0896,
+     "val_loss": 0.15,
+     "val_accuracy": 0.9706,
+     "seconds": 15.5
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0869,
+     "val_loss": 0.1407,
+     "val_accuracy": 0.9706,
+     "seconds": 16.3
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.08,
+     "val_loss": 0.1333,
+     "val_accuracy": 0.9706,
+     "seconds": 17.1
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0741,
+     "val_loss": 0.1268,
+     "val_accuracy": 1.0,
+     "seconds": 17.9
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9702
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53.jpeg",
+     "index": 28,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9851
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.06.jpeg",
+     "index": 24,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8856
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.875
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9732
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9747
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03.jpeg",
+     "index": 23,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8576
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.02.jpeg",
+     "index": 40,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9731
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52.jpeg",
+     "index": 11,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9798
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53 (2).jpeg",
+     "index": 27,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9719
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.47 (3).jpeg",
+     "index": 61,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9764
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9008
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.4535
+    },
+    {
+     "file": "o_passante/IMG_20190423_132347677.jpg",
+     "index": 94,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8852
+    },
+    {
+     "file": "o_passante/IMG_20190423_132058142.jpg",
+     "index": 75,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.5318
+    },
+    {
+     "file": "o_passante/IMG_20190423_132002120.jpg",
+     "index": 69,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7438
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8213
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9142
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9783
+    },
+    {
+     "file": "o_passante/IMG_20190423_132156513.jpg",
+     "index": 80,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8637
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.961
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135245317.jpg",
+     "index": 125,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9769
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135302808.jpg",
+     "index": 128,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9189
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135012399.jpg",
+     "index": 107,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9052
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 11.59.09.jpeg",
+     "index": 137,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9492
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135026955.jpg",
+     "index": 108,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9877
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135118510.jpg",
+     "index": 113,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9823
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9452
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144831430.jpg",
+     "index": 155,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8243
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145019960.jpg",
+     "index": 166,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9678
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144642877.jpg",
+     "index": 147,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.7023
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144959858.jpg",
+     "index": 163,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9568
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144722849.jpg",
+     "index": 149,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8351
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/Sem_titulo_Amilcar_de_Castro.jpg",
+     "index": 169,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8905
+    }
+   ]
+  },
+  {
+   "arch": "mobilenet_v2",
+   "seed": 1,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 0.9706,
+   "best_val_accuracy": 0.9706,
+   "best_epoch": 8,
+   "train_seconds": 19.0,
+   "inference_ms_per_image": 5.18,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.3244,
+     "val_loss": 1.1125,
+     "val_accuracy": 0.5294,
+     "seconds": 1.2
+    },
+    {
+     "epoch": 2,
+     "train_loss": 1.0157,
+     "val_loss": 0.8852,
+     "val_accuracy": 0.8529,
+     "seconds": 2.5
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.7803,
+     "val_loss": 0.7067,
+     "val_accuracy": 0.9118,
+     "seconds": 3.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.6141,
+     "val_loss": 0.5756,
+     "val_accuracy": 0.9412,
+     "seconds": 4.5
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.487,
+     "val_loss": 0.4772,
+     "val_accuracy": 0.9412,
+     "seconds": 5.3
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.3846,
+     "val_loss": 0.4035,
+     "val_accuracy": 0.9412,
+     "seconds": 6.2
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3061,
+     "val_loss": 0.3476,
+     "val_accuracy": 0.9412,
+     "seconds": 7.0
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.2603,
+     "val_loss": 0.3057,
+     "val_accuracy": 0.9706,
+     "seconds": 7.8
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.225,
+     "val_loss": 0.2739,
+     "val_accuracy": 0.9706,
+     "seconds": 8.7
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.1862,
+     "val_loss": 0.2484,
+     "val_accuracy": 0.9706,
+     "seconds": 9.5
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.1706,
+     "val_loss": 0.2283,
+     "val_accuracy": 0.9706,
+     "seconds": 10.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.153,
+     "val_loss": 0.2117,
+     "val_accuracy": 0.9706,
+     "seconds": 11.2
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.1365,
+     "val_loss": 0.1978,
+     "val_accuracy": 0.9706,
+     "seconds": 12.0
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1219,
+     "val_loss": 0.1853,
+     "val_accuracy": 0.9706,
+     "seconds": 12.9
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.1146,
+     "val_loss": 0.1733,
+     "val_accuracy": 0.9706,
+     "seconds": 13.9
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.1067,
+     "val_loss": 0.1637,
+     "val_accuracy": 0.9706,
+     "seconds": 15.2
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0938,
+     "val_loss": 0.1538,
+     "val_accuracy": 0.9706,
+     "seconds": 16.4
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0858,
+     "val_loss": 0.1467,
+     "val_accuracy": 0.9706,
+     "seconds": 17.3
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0755,
+     "val_loss": 0.1403,
+     "val_accuracy": 0.9706,
+     "seconds": 18.2
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0792,
+     "val_loss": 0.1363,
+     "val_accuracy": 0.9706,
+     "seconds": 19.0
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9561
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.54 (1).jpeg",
+     "index": 12,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9526
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.12 (1).jpeg",
+     "index": 52,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.7303
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8919
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.01.jpeg",
+     "index": 19,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9568
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 1,
+     "confidence": 0.5489
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9713
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46 (2).jpeg",
+     "index": 58,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9374
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 16.59.59.png",
+     "index": 2,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.7824
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8448
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52 (1).jpeg",
+     "index": 10,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9833
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.50.jpeg",
+     "index": 8,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9195
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9643
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9245
+    },
+    {
+     "file": "o_passante/IMG_20190423_133340076.jpg",
+     "index": 99,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9839
+    },
+    {
+     "file": "o_passante/IMG_20190423_132320144.jpg",
+     "index": 90,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.869
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9686
+    },
+    {
+     "file": "o_passante/IMG_20190423_131955095.jpg",
+     "index": 68,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.6626
+    },
+    {
+     "file": "o_passante/IMG_20190423_132237860.jpg",
+     "index": 84,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9595
+    },
+    {
+     "file": "o_passante/O_passante.jpg",
+     "index": 100,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9323
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135228257.jpg",
+     "index": 123,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9234
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8916
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135125547.jpg",
+     "index": 114,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9777
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9312
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9524
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.873
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9057
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135328540.jpg",
+     "index": 132,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9595
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144716447.jpg",
+     "index": 148,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.6403
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144735072.jpg",
+     "index": 150,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9052
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9235
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144829215.jpg",
+     "index": 154,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9405
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144739419.jpg",
+     "index": 151,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.869
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144922091.jpg",
+     "index": 161,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9607
+    }
+   ]
+  },
+  {
+   "arch": "mobilenet_v2",
+   "seed": 2,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 6,
+   "train_seconds": 18.0,
+   "inference_ms_per_image": 5.13,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.333,
+     "val_loss": 1.109,
+     "val_accuracy": 0.6471,
+     "seconds": 0.8
+    },
+    {
+     "epoch": 2,
+     "train_loss": 1.0258,
+     "val_loss": 0.9069,
+     "val_accuracy": 0.7059,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.8088,
+     "val_loss": 0.7462,
+     "val_accuracy": 0.8529,
+     "seconds": 2.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.6373,
+     "val_loss": 0.6172,
+     "val_accuracy": 0.9118,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.5078,
+     "val_loss": 0.5122,
+     "val_accuracy": 0.9706,
+     "seconds": 4.2
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.4025,
+     "val_loss": 0.429,
+     "val_accuracy": 1.0,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.3259,
+     "val_loss": 0.3669,
+     "val_accuracy": 1.0,
+     "seconds": 5.9
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.282,
+     "val_loss": 0.3215,
+     "val_accuracy": 1.0,
+     "seconds": 6.8
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.2345,
+     "val_loss": 0.2833,
+     "val_accuracy": 1.0,
+     "seconds": 7.8
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.2136,
+     "val_loss": 0.2479,
+     "val_accuracy": 1.0,
+     "seconds": 9.2
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.1838,
+     "val_loss": 0.2199,
+     "val_accuracy": 1.0,
+     "seconds": 10.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.171,
+     "val_loss": 0.1988,
+     "val_accuracy": 1.0,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.143,
+     "val_loss": 0.1807,
+     "val_accuracy": 1.0,
+     "seconds": 12.1
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.1341,
+     "val_loss": 0.1655,
+     "val_accuracy": 1.0,
+     "seconds": 13.0
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.1232,
+     "val_loss": 0.1524,
+     "val_accuracy": 1.0,
+     "seconds": 13.8
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.1106,
+     "val_loss": 0.1401,
+     "val_accuracy": 1.0,
+     "seconds": 14.7
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.1014,
+     "val_loss": 0.1309,
+     "val_accuracy": 1.0,
+     "seconds": 15.5
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0951,
+     "val_loss": 0.1219,
+     "val_accuracy": 1.0,
+     "seconds": 16.3
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0809,
+     "val_loss": 0.1136,
+     "val_accuracy": 1.0,
+     "seconds": 17.1
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0841,
+     "val_loss": 0.1072,
+     "val_accuracy": 1.0,
+     "seconds": 18.0
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.875
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.02.jpeg",
+     "index": 21,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9544
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.01.jpeg",
+     "index": 39,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8901
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.09.jpeg",
+     "index": 49,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8374
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55.jpeg",
+     "index": 15,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9655
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.45 (2).jpeg",
+     "index": 55,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9681
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.51.jpeg",
+     "index": 9,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9359
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.00.jpeg",
+     "index": 18,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9397
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.55 (1).jpeg",
+     "index": 30,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9839
+    },
+    {
+     "file": "escultura_para_o_rio/Escultura para o Rio.PNG",
+     "index": 6,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9044
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9612
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9685
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55 (1).jpeg",
+     "index": 14,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9297
+    },
+    {
+     "file": "o_passante/IMG_20190423_132006577.jpg",
+     "index": 70,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7909
+    },
+    {
+     "file": "o_passante/IMG_20190423_131911679.jpg",
+     "index": 64,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8998
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8649
+    },
+    {
+     "file": "o_passante/IMG_20190423_131943012.jpg",
+     "index": 67,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8406
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8047
+    },
+    {
+     "file": "o_passante/IMG_20190423_132213520.jpg",
+     "index": 83,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9097
+    },
+    {
+     "file": "o_passante/IMG_20190423_132114823_BURST000_COVER_TOP.jpg",
+     "index": 76,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.7503
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135208337.jpg",
+     "index": 120,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9352
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8924
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9397
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135322730.jpg",
+     "index": 131,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9801
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135049268.jpg",
+     "index": 110,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8866
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8861
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135252772.jpg",
+     "index": 126,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9466
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135153047.jpg",
+     "index": 118,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8169
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145015767.jpg",
+     "index": 165,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9706
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.928
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145014738.jpg",
+     "index": 164,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9618
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144626118.jpg",
+     "index": 145,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.975
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144550078.jpg",
+     "index": 141,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.6596
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144823234.jpg",
+     "index": 152,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8969
+    }
+   ]
+  },
+  {
+   "arch": "efficientnet_b0",
+   "seed": 0,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 17,
+   "train_seconds": 19.2,
+   "inference_ms_per_image": 7.91,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.3258,
+     "val_loss": 0.9633,
+     "val_accuracy": 0.7353,
+     "seconds": 0.9
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.8013,
+     "val_loss": 0.6548,
+     "val_accuracy": 0.8235,
+     "seconds": 1.8
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.501,
+     "val_loss": 0.4666,
+     "val_accuracy": 0.8824,
+     "seconds": 2.9
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.3198,
+     "val_loss": 0.3534,
+     "val_accuracy": 0.9706,
+     "seconds": 4.2
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.2196,
+     "val_loss": 0.2886,
+     "val_accuracy": 0.9706,
+     "seconds": 5.4
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.1702,
+     "val_loss": 0.2366,
+     "val_accuracy": 0.9706,
+     "seconds": 6.2
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.1238,
+     "val_loss": 0.202,
+     "val_accuracy": 0.9706,
+     "seconds": 7.1
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.1091,
+     "val_loss": 0.1756,
+     "val_accuracy": 0.9706,
+     "seconds": 7.9
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0871,
+     "val_loss": 0.1559,
+     "val_accuracy": 0.9706,
+     "seconds": 8.8
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0738,
+     "val_loss": 0.1407,
+     "val_accuracy": 0.9706,
+     "seconds": 9.6
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.068,
+     "val_loss": 0.1297,
+     "val_accuracy": 0.9706,
+     "seconds": 10.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.0585,
+     "val_loss": 0.1201,
+     "val_accuracy": 0.9706,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.0507,
+     "val_loss": 0.112,
+     "val_accuracy": 0.9706,
+     "seconds": 12.1
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0475,
+     "val_loss": 0.1057,
+     "val_accuracy": 0.9706,
+     "seconds": 13.0
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.0406,
+     "val_loss": 0.0993,
+     "val_accuracy": 0.9706,
+     "seconds": 13.8
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.0383,
+     "val_loss": 0.0938,
+     "val_accuracy": 0.9706,
+     "seconds": 14.6
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0351,
+     "val_loss": 0.0891,
+     "val_accuracy": 1.0,
+     "seconds": 15.7
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0359,
+     "val_loss": 0.0839,
+     "val_accuracy": 1.0,
+     "seconds": 17.1
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0316,
+     "val_loss": 0.0798,
+     "val_accuracy": 1.0,
+     "seconds": 18.4
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0288,
+     "val_loss": 0.0764,
+     "val_accuracy": 1.0,
+     "seconds": 19.2
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9881
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53.jpeg",
+     "index": 28,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9881
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.06.jpeg",
+     "index": 24,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9731
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9337
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.985
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9453
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03.jpeg",
+     "index": 23,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9783
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.02.jpeg",
+     "index": 40,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.994
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52.jpeg",
+     "index": 11,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9957
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53 (2).jpeg",
+     "index": 27,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9915
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.47 (3).jpeg",
+     "index": 61,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8285
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8834
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.4095
+    },
+    {
+     "file": "o_passante/IMG_20190423_132347677.jpg",
+     "index": 94,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9026
+    },
+    {
+     "file": "o_passante/IMG_20190423_132058142.jpg",
+     "index": 75,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.861
+    },
+    {
+     "file": "o_passante/IMG_20190423_132002120.jpg",
+     "index": 69,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9538
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9158
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.976
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9591
+    },
+    {
+     "file": "o_passante/IMG_20190423_132156513.jpg",
+     "index": 80,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8729
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9973
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135245317.jpg",
+     "index": 125,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9946
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135302808.jpg",
+     "index": 128,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9802
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135012399.jpg",
+     "index": 107,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9983
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 11.59.09.jpeg",
+     "index": 137,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9628
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135026955.jpg",
+     "index": 108,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9964
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135118510.jpg",
+     "index": 113,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9656
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9844
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144831430.jpg",
+     "index": 155,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8505
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145019960.jpg",
+     "index": 166,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.995
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144642877.jpg",
+     "index": 147,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.982
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144959858.jpg",
+     "index": 163,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9914
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144722849.jpg",
+     "index": 149,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8006
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/Sem_titulo_Amilcar_de_Castro.jpg",
+     "index": 169,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9666
+    }
+   ]
+  },
+  {
+   "arch": "efficientnet_b0",
+   "seed": 1,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 3,
+   "train_seconds": 18.3,
+   "inference_ms_per_image": 8.98,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.2591,
+     "val_loss": 0.9318,
+     "val_accuracy": 0.6471,
+     "seconds": 0.8
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.7549,
+     "val_loss": 0.6039,
+     "val_accuracy": 0.9706,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.4597,
+     "val_loss": 0.409,
+     "val_accuracy": 1.0,
+     "seconds": 2.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.3008,
+     "val_loss": 0.2915,
+     "val_accuracy": 1.0,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.201,
+     "val_loss": 0.2201,
+     "val_accuracy": 1.0,
+     "seconds": 4.2
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.1468,
+     "val_loss": 0.177,
+     "val_accuracy": 1.0,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.113,
+     "val_loss": 0.1505,
+     "val_accuracy": 1.0,
+     "seconds": 5.9
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.0905,
+     "val_loss": 0.1314,
+     "val_accuracy": 1.0,
+     "seconds": 6.8
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0749,
+     "val_loss": 0.1186,
+     "val_accuracy": 1.0,
+     "seconds": 7.7
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0674,
+     "val_loss": 0.1077,
+     "val_accuracy": 1.0,
+     "seconds": 8.6
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.0593,
+     "val_loss": 0.0983,
+     "val_accuracy": 1.0,
+     "seconds": 9.9
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.0546,
+     "val_loss": 0.091,
+     "val_accuracy": 1.0,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.0484,
+     "val_loss": 0.0852,
+     "val_accuracy": 1.0,
+     "seconds": 12.3
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0441,
+     "val_loss": 0.0801,
+     "val_accuracy": 1.0,
+     "seconds": 13.1
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.0376,
+     "val_loss": 0.0754,
+     "val_accuracy": 1.0,
+     "seconds": 14.0
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.0406,
+     "val_loss": 0.0718,
+     "val_accuracy": 1.0,
+     "seconds": 14.8
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0332,
+     "val_loss": 0.0677,
+     "val_accuracy": 1.0,
+     "seconds": 15.7
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0305,
+     "val_loss": 0.064,
+     "val_accuracy": 1.0,
+     "seconds": 16.6
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0298,
+     "val_loss": 0.0607,
+     "val_accuracy": 1.0,
+     "seconds": 17.5
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0324,
+     "val_loss": 0.0582,
+     "val_accuracy": 1.0,
+     "seconds": 18.3
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9783
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.54 (1).jpeg",
+     "index": 12,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9809
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.12 (1).jpeg",
+     "index": 52,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9577
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9035
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.01.jpeg",
+     "index": 19,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9463
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.534
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9459
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46 (2).jpeg",
+     "index": 58,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9582
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 16.59.59.png",
+     "index": 2,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9472
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9355
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52 (1).jpeg",
+     "index": 10,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9889
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.50.jpeg",
+     "index": 8,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9791
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9916
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.976
+    },
+    {
+     "file": "o_passante/IMG_20190423_133340076.jpg",
+     "index": 99,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9821
+    },
+    {
+     "file": "o_passante/IMG_20190423_132320144.jpg",
+     "index": 90,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9501
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9337
+    },
+    {
+     "file": "o_passante/IMG_20190423_131955095.jpg",
+     "index": 68,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9263
+    },
+    {
+     "file": "o_passante/IMG_20190423_132237860.jpg",
+     "index": 84,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9881
+    },
+    {
+     "file": "o_passante/O_passante.jpg",
+     "index": 100,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9786
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135228257.jpg",
+     "index": 123,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9911
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9337
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135125547.jpg",
+     "index": 114,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9894
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9844
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9955
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9265
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9619
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135328540.jpg",
+     "index": 132,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9807
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144716447.jpg",
+     "index": 148,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8292
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144735072.jpg",
+     "index": 150,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9863
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9481
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144829215.jpg",
+     "index": 154,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9965
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144739419.jpg",
+     "index": 151,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.987
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144922091.jpg",
+     "index": 161,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9383
+    }
+   ]
+  },
+  {
+   "arch": "efficientnet_b0",
+   "seed": 2,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 5,
+   "train_seconds": 19.3,
+   "inference_ms_per_image": 8.08,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.1764,
+     "val_loss": 0.8692,
+     "val_accuracy": 0.8235,
+     "seconds": 0.9
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.7004,
+     "val_loss": 0.5797,
+     "val_accuracy": 0.9412,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.4391,
+     "val_loss": 0.4048,
+     "val_accuracy": 0.9706,
+     "seconds": 2.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.2916,
+     "val_loss": 0.2944,
+     "val_accuracy": 0.9706,
+     "seconds": 3.8
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.2107,
+     "val_loss": 0.222,
+     "val_accuracy": 1.0,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.1542,
+     "val_loss": 0.1742,
+     "val_accuracy": 1.0,
+     "seconds": 6.3
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.1189,
+     "val_loss": 0.1435,
+     "val_accuracy": 1.0,
+     "seconds": 7.2
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.0981,
+     "val_loss": 0.1226,
+     "val_accuracy": 1.0,
+     "seconds": 8.0
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0802,
+     "val_loss": 0.1061,
+     "val_accuracy": 1.0,
+     "seconds": 8.9
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0721,
+     "val_loss": 0.0925,
+     "val_accuracy": 1.0,
+     "seconds": 9.7
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.0604,
+     "val_loss": 0.0824,
+     "val_accuracy": 1.0,
+     "seconds": 10.6
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.0569,
+     "val_loss": 0.0747,
+     "val_accuracy": 1.0,
+     "seconds": 11.5
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.052,
+     "val_loss": 0.0683,
+     "val_accuracy": 1.0,
+     "seconds": 12.3
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0435,
+     "val_loss": 0.0631,
+     "val_accuracy": 1.0,
+     "seconds": 13.1
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.0422,
+     "val_loss": 0.0589,
+     "val_accuracy": 1.0,
+     "seconds": 14.0
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.0375,
+     "val_loss": 0.0553,
+     "val_accuracy": 1.0,
+     "seconds": 14.8
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0334,
+     "val_loss": 0.0522,
+     "val_accuracy": 1.0,
+     "seconds": 15.7
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0314,
+     "val_loss": 0.0495,
+     "val_accuracy": 1.0,
+     "seconds": 16.9
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0286,
+     "val_loss": 0.047,
+     "val_accuracy": 1.0,
+     "seconds": 18.2
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0294,
+     "val_loss": 0.0446,
+     "val_accuracy": 1.0,
+     "seconds": 19.3
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.8918
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.02.jpeg",
+     "index": 21,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9767
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.01.jpeg",
+     "index": 39,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9578
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.09.jpeg",
+     "index": 49,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9687
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55.jpeg",
+     "index": 15,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9934
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.45 (2).jpeg",
+     "index": 55,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9512
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.51.jpeg",
+     "index": 9,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9941
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.00.jpeg",
+     "index": 18,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9892
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.55 (1).jpeg",
+     "index": 30,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9762
+    },
+    {
+     "file": "escultura_para_o_rio/Escultura para o Rio.PNG",
+     "index": 6,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9067
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9847
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9826
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55 (1).jpeg",
+     "index": 14,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9964
+    },
+    {
+     "file": "o_passante/IMG_20190423_132006577.jpg",
+     "index": 70,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9656
+    },
+    {
+     "file": "o_passante/IMG_20190423_131911679.jpg",
+     "index": 64,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9742
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9626
+    },
+    {
+     "file": "o_passante/IMG_20190423_131943012.jpg",
+     "index": 67,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.95
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8996
+    },
+    {
+     "file": "o_passante/IMG_20190423_132213520.jpg",
+     "index": 83,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9406
+    },
+    {
+     "file": "o_passante/IMG_20190423_132114823_BURST000_COVER_TOP.jpg",
+     "index": 76,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.902
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135208337.jpg",
+     "index": 120,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9934
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9069
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.982
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135322730.jpg",
+     "index": 131,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9917
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135049268.jpg",
+     "index": 110,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9529
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9636
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135252772.jpg",
+     "index": 126,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9866
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135153047.jpg",
+     "index": 118,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.973
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145015767.jpg",
+     "index": 165,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9942
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9544
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145014738.jpg",
+     "index": 164,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.993
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144626118.jpg",
+     "index": 145,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9885
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144550078.jpg",
+     "index": 141,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.7297
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144823234.jpg",
+     "index": 152,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9928
+    }
+   ]
+  },
+  {
+   "arch": "mobilenetv4",
+   "seed": 0,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 17,
+   "train_seconds": 17.9,
+   "inference_ms_per_image": 8.19,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.165,
+     "val_loss": 0.7402,
+     "val_accuracy": 0.8235,
+     "seconds": 0.9
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.6298,
+     "val_loss": 0.457,
+     "val_accuracy": 0.8824,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.3465,
+     "val_loss": 0.316,
+     "val_accuracy": 0.9412,
+     "seconds": 2.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.2269,
+     "val_loss": 0.2414,
+     "val_accuracy": 0.9706,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.1513,
+     "val_loss": 0.1888,
+     "val_accuracy": 0.9706,
+     "seconds": 4.3
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.1212,
+     "val_loss": 0.1601,
+     "val_accuracy": 0.9706,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.0933,
+     "val_loss": 0.1367,
+     "val_accuracy": 0.9706,
+     "seconds": 5.9
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.079,
+     "val_loss": 0.1171,
+     "val_accuracy": 0.9706,
+     "seconds": 6.8
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0652,
+     "val_loss": 0.1063,
+     "val_accuracy": 0.9706,
+     "seconds": 7.6
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0542,
+     "val_loss": 0.0984,
+     "val_accuracy": 0.9706,
+     "seconds": 8.5
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.0515,
+     "val_loss": 0.0909,
+     "val_accuracy": 0.9706,
+     "seconds": 9.4
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.044,
+     "val_loss": 0.0849,
+     "val_accuracy": 0.9706,
+     "seconds": 10.6
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.0378,
+     "val_loss": 0.0781,
+     "val_accuracy": 0.9706,
+     "seconds": 12.0
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0376,
+     "val_loss": 0.0752,
+     "val_accuracy": 0.9706,
+     "seconds": 12.9
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.0342,
+     "val_loss": 0.0709,
+     "val_accuracy": 0.9706,
+     "seconds": 13.7
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.0332,
+     "val_loss": 0.0658,
+     "val_accuracy": 0.9706,
+     "seconds": 14.6
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0281,
+     "val_loss": 0.0641,
+     "val_accuracy": 1.0,
+     "seconds": 15.4
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0271,
+     "val_loss": 0.0616,
+     "val_accuracy": 1.0,
+     "seconds": 16.2
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0226,
+     "val_loss": 0.0592,
+     "val_accuracy": 1.0,
+     "seconds": 17.1
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0217,
+     "val_loss": 0.0567,
+     "val_accuracy": 1.0,
+     "seconds": 17.9
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9963
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53.jpeg",
+     "index": 28,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9964
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.06.jpeg",
+     "index": 24,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9933
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9722
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9906
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9871
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03.jpeg",
+     "index": 23,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9974
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.02.jpeg",
+     "index": 40,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9982
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52.jpeg",
+     "index": 11,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9948
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.53 (2).jpeg",
+     "index": 27,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9946
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.47 (3).jpeg",
+     "index": 61,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9846
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9861
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.4012
+    },
+    {
+     "file": "o_passante/IMG_20190423_132347677.jpg",
+     "index": 94,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9009
+    },
+    {
+     "file": "o_passante/IMG_20190423_132058142.jpg",
+     "index": 75,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.876
+    },
+    {
+     "file": "o_passante/IMG_20190423_132002120.jpg",
+     "index": 69,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9804
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8162
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9513
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9918
+    },
+    {
+     "file": "o_passante/IMG_20190423_132156513.jpg",
+     "index": 80,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.943
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9989
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135245317.jpg",
+     "index": 125,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9965
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135302808.jpg",
+     "index": 128,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9556
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135012399.jpg",
+     "index": 107,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9984
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 11.59.09.jpeg",
+     "index": 137,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9741
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135026955.jpg",
+     "index": 108,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.999
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135118510.jpg",
+     "index": 113,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9934
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9933
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144831430.jpg",
+     "index": 155,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9439
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145019960.jpg",
+     "index": 166,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9997
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144642877.jpg",
+     "index": 147,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9431
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144959858.jpg",
+     "index": 163,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9994
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144722849.jpg",
+     "index": 149,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9143
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/Sem_titulo_Amilcar_de_Castro.jpg",
+     "index": 169,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9701
+    }
+   ]
+  },
+  {
+   "arch": "mobilenetv4",
+   "seed": 1,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 0.9706,
+   "best_val_accuracy": 0.9706,
+   "best_epoch": 2,
+   "train_seconds": 18.8,
+   "inference_ms_per_image": 11.98,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.154,
+     "val_loss": 0.7041,
+     "val_accuracy": 0.9412,
+     "seconds": 0.8
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.5446,
+     "val_loss": 0.3619,
+     "val_accuracy": 0.9706,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.2932,
+     "val_loss": 0.2259,
+     "val_accuracy": 0.9706,
+     "seconds": 2.5
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.1816,
+     "val_loss": 0.1704,
+     "val_accuracy": 0.9706,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.127,
+     "val_loss": 0.1362,
+     "val_accuracy": 0.9706,
+     "seconds": 4.5
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.0863,
+     "val_loss": 0.1229,
+     "val_accuracy": 0.9706,
+     "seconds": 5.9
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.0694,
+     "val_loss": 0.1056,
+     "val_accuracy": 0.9706,
+     "seconds": 7.1
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.0543,
+     "val_loss": 0.0927,
+     "val_accuracy": 0.9706,
+     "seconds": 8.0
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0483,
+     "val_loss": 0.0837,
+     "val_accuracy": 0.9706,
+     "seconds": 8.8
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0418,
+     "val_loss": 0.0781,
+     "val_accuracy": 0.9706,
+     "seconds": 9.7
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.0352,
+     "val_loss": 0.0741,
+     "val_accuracy": 0.9706,
+     "seconds": 10.5
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.0358,
+     "val_loss": 0.0695,
+     "val_accuracy": 0.9706,
+     "seconds": 11.3
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.0319,
+     "val_loss": 0.0656,
+     "val_accuracy": 0.9706,
+     "seconds": 12.2
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0264,
+     "val_loss": 0.0633,
+     "val_accuracy": 0.9706,
+     "seconds": 13.0
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.025,
+     "val_loss": 0.0605,
+     "val_accuracy": 0.9706,
+     "seconds": 13.9
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.0242,
+     "val_loss": 0.0591,
+     "val_accuracy": 0.9706,
+     "seconds": 14.7
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0192,
+     "val_loss": 0.0547,
+     "val_accuracy": 0.9706,
+     "seconds": 15.6
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0203,
+     "val_loss": 0.0537,
+     "val_accuracy": 0.9706,
+     "seconds": 16.4
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0212,
+     "val_loss": 0.0531,
+     "val_accuracy": 0.9706,
+     "seconds": 17.5
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0198,
+     "val_loss": 0.0527,
+     "val_accuracy": 0.9706,
+     "seconds": 18.8
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9808
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.54 (1).jpeg",
+     "index": 12,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9885
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.12 (1).jpeg",
+     "index": 52,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9801
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9863
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.01.jpeg",
+     "index": 19,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.987
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.41.png",
+     "index": 5,
+     "true": 0,
+     "predicted": 1,
+     "confidence": 0.5106
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46.jpeg",
+     "index": 60,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9863
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.46 (2).jpeg",
+     "index": 58,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9896
+    },
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 16.59.59.png",
+     "index": 2,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9837
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.57 (1).jpeg",
+     "index": 33,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.985
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.52 (1).jpeg",
+     "index": 10,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9891
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.50.jpeg",
+     "index": 8,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9893
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.54.jpeg",
+     "index": 29,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9967
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9628
+    },
+    {
+     "file": "o_passante/IMG_20190423_133340076.jpg",
+     "index": 99,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9963
+    },
+    {
+     "file": "o_passante/IMG_20190423_132320144.jpg",
+     "index": 90,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9678
+    },
+    {
+     "file": "o_passante/IMG_20190423_132307205.jpg",
+     "index": 88,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9906
+    },
+    {
+     "file": "o_passante/IMG_20190423_131955095.jpg",
+     "index": 68,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9842
+    },
+    {
+     "file": "o_passante/IMG_20190423_132237860.jpg",
+     "index": 84,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9909
+    },
+    {
+     "file": "o_passante/O_passante.jpg",
+     "index": 100,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9881
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135228257.jpg",
+     "index": 123,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9964
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.39.png",
+     "index": 102,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9927
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135125547.jpg",
+     "index": 114,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9963
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9723
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135234218.jpg",
+     "index": 124,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9984
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9075
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9884
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135328540.jpg",
+     "index": 132,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9943
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144716447.jpg",
+     "index": 148,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.8511
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144735072.jpg",
+     "index": 150,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9972
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9803
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144829215.jpg",
+     "index": 154,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9986
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144739419.jpg",
+     "index": 151,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9904
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144922091.jpg",
+     "index": 161,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9564
+    }
+   ]
+  },
+  {
+   "arch": "mobilenetv4",
+   "seed": 2,
+   "train_images": 136,
+   "val_images": 34,
+   "final_val_accuracy": 1.0,
+   "best_val_accuracy": 1.0,
+   "best_epoch": 8,
+   "train_seconds": 18.1,
+   "inference_ms_per_image": 8.62,
+   "history": [
+    {
+     "epoch": 1,
+     "train_loss": 1.2446,
+     "val_loss": 0.8733,
+     "val_accuracy": 0.7941,
+     "seconds": 0.8
+    },
+    {
+     "epoch": 2,
+     "train_loss": 0.6299,
+     "val_loss": 0.553,
+     "val_accuracy": 0.8824,
+     "seconds": 1.7
+    },
+    {
+     "epoch": 3,
+     "train_loss": 0.3812,
+     "val_loss": 0.3547,
+     "val_accuracy": 0.9412,
+     "seconds": 2.6
+    },
+    {
+     "epoch": 4,
+     "train_loss": 0.2274,
+     "val_loss": 0.2497,
+     "val_accuracy": 0.9412,
+     "seconds": 3.4
+    },
+    {
+     "epoch": 5,
+     "train_loss": 0.1697,
+     "val_loss": 0.1925,
+     "val_accuracy": 0.9706,
+     "seconds": 4.2
+    },
+    {
+     "epoch": 6,
+     "train_loss": 0.1211,
+     "val_loss": 0.1633,
+     "val_accuracy": 0.9706,
+     "seconds": 5.1
+    },
+    {
+     "epoch": 7,
+     "train_loss": 0.0948,
+     "val_loss": 0.1463,
+     "val_accuracy": 0.9706,
+     "seconds": 5.9
+    },
+    {
+     "epoch": 8,
+     "train_loss": 0.0794,
+     "val_loss": 0.1278,
+     "val_accuracy": 1.0,
+     "seconds": 6.7
+    },
+    {
+     "epoch": 9,
+     "train_loss": 0.0664,
+     "val_loss": 0.1092,
+     "val_accuracy": 1.0,
+     "seconds": 7.6
+    },
+    {
+     "epoch": 10,
+     "train_loss": 0.0572,
+     "val_loss": 0.0953,
+     "val_accuracy": 1.0,
+     "seconds": 8.4
+    },
+    {
+     "epoch": 11,
+     "train_loss": 0.0477,
+     "val_loss": 0.0842,
+     "val_accuracy": 1.0,
+     "seconds": 9.3
+    },
+    {
+     "epoch": 12,
+     "train_loss": 0.0429,
+     "val_loss": 0.0818,
+     "val_accuracy": 1.0,
+     "seconds": 10.2
+    },
+    {
+     "epoch": 13,
+     "train_loss": 0.0448,
+     "val_loss": 0.078,
+     "val_accuracy": 1.0,
+     "seconds": 11.6
+    },
+    {
+     "epoch": 14,
+     "train_loss": 0.0354,
+     "val_loss": 0.0693,
+     "val_accuracy": 1.0,
+     "seconds": 12.9
+    },
+    {
+     "epoch": 15,
+     "train_loss": 0.0368,
+     "val_loss": 0.0618,
+     "val_accuracy": 1.0,
+     "seconds": 13.8
+    },
+    {
+     "epoch": 16,
+     "train_loss": 0.027,
+     "val_loss": 0.0581,
+     "val_accuracy": 1.0,
+     "seconds": 14.7
+    },
+    {
+     "epoch": 17,
+     "train_loss": 0.0311,
+     "val_loss": 0.056,
+     "val_accuracy": 1.0,
+     "seconds": 15.5
+    },
+    {
+     "epoch": 18,
+     "train_loss": 0.0279,
+     "val_loss": 0.0534,
+     "val_accuracy": 1.0,
+     "seconds": 16.4
+    },
+    {
+     "epoch": 19,
+     "train_loss": 0.0225,
+     "val_loss": 0.0515,
+     "val_accuracy": 1.0,
+     "seconds": 17.2
+    },
+    {
+     "epoch": 20,
+     "train_loss": 0.0243,
+     "val_loss": 0.0495,
+     "val_accuracy": 1.0,
+     "seconds": 18.1
+    }
+   ],
+   "predictions": [
+    {
+     "file": "escultura_para_o_rio/Captura de Tela 2019-11-14 a\u0300s 17.00.14.png",
+     "index": 3,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9816
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.02.jpeg",
+     "index": 21,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9658
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.01.jpeg",
+     "index": 39,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9932
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.08.09.jpeg",
+     "index": 49,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9907
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55.jpeg",
+     "index": 15,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9932
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-11-14 at 11.57.45 (2).jpeg",
+     "index": 55,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9949
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.51.jpeg",
+     "index": 9,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9926
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.00.jpeg",
+     "index": 18,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9929
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.55 (1).jpeg",
+     "index": 30,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9975
+    },
+    {
+     "file": "escultura_para_o_rio/Escultura para o Rio.PNG",
+     "index": 6,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9622
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.03 (1).jpeg",
+     "index": 22,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9774
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.07.59.jpeg",
+     "index": 35,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9906
+    },
+    {
+     "file": "escultura_para_o_rio/WhatsApp Image 2019-05-20 at 13.06.55 (1).jpeg",
+     "index": 14,
+     "true": 0,
+     "predicted": 0,
+     "confidence": 0.9858
+    },
+    {
+     "file": "o_passante/IMG_20190423_132006577.jpg",
+     "index": 70,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.967
+    },
+    {
+     "file": "o_passante/IMG_20190423_131911679.jpg",
+     "index": 64,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9669
+    },
+    {
+     "file": "o_passante/IMG_20190423_131919685.jpg",
+     "index": 65,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9532
+    },
+    {
+     "file": "o_passante/IMG_20190423_131943012.jpg",
+     "index": 67,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9606
+    },
+    {
+     "file": "o_passante/IMG_20190423_132032321.jpg",
+     "index": 72,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.71
+    },
+    {
+     "file": "o_passante/IMG_20190423_132213520.jpg",
+     "index": 83,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.9513
+    },
+    {
+     "file": "o_passante/IMG_20190423_132114823_BURST000_COVER_TOP.jpg",
+     "index": 76,
+     "true": 1,
+     "predicted": 1,
+     "confidence": 0.8212
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135208337.jpg",
+     "index": 120,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9883
+    },
+    {
+     "file": "retangulo_vazado/Captura de Tela 2019-11-14 a\u0300s 16.57.46.png",
+     "index": 103,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9168
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135254019.jpg",
+     "index": 127,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9778
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135322730.jpg",
+     "index": 131,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.996
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135049268.jpg",
+     "index": 110,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.8326
+    },
+    {
+     "file": "retangulo_vazado/WhatsApp Image 2022-05-06 at 12.00.33.jpeg",
+     "index": 138,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9828
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135252772.jpg",
+     "index": 126,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9821
+    },
+    {
+     "file": "retangulo_vazado/IMG_20190423_135153047.jpg",
+     "index": 118,
+     "true": 2,
+     "predicted": 2,
+     "confidence": 0.9204
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145015767.jpg",
+     "index": 165,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9995
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144915335.jpg",
+     "index": 160,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9855
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_145014738.jpg",
+     "index": 164,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9995
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144626118.jpg",
+     "index": 145,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9879
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144550078.jpg",
+     "index": 141,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.7407
+    },
+    {
+     "file": "sem_titulo_amilcar_de_castro/IMG_20190423_144823234.jpg",
+     "index": 152,
+     "true": 3,
+     "predicted": 3,
+     "confidence": 0.9983
+    }
+   ]
+  }
+ ]
+}
